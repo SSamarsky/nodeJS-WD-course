@@ -1,18 +1,9 @@
-const fs = require("fs");
+const Logger = require("./log");
+const logger = new Logger();
 
-fs.readFile("./text.txt", "utf8", (error, data) => {
-  fs.mkdirSync("./files", () => {});
-  fs.writeFileSync("./files/text_2.txt", data, () => {});
+logger.on("some_event", (args) => {
+  const { id, text } = args;
+  console.log(id, text);
 });
 
-setTimeout(() => {
-    if (fs.existsSync('./files/text_2.txt')) {
-        fs.unlink('./files/text_2.txt', ()=>{});
-    }
-}, 4000)
-
-setTimeout(() => {
-    if (fs.existsSync('./files')) {
-        fs.rmdir('./files', () => {})
-    }
-}, 6000)
+logger.log("User logged");
