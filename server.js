@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
+
 const creatPath = (page) => path.resolve(__dirname, "views", `${page}.html`);
 
 const PORT = 3000;
