@@ -16,6 +16,8 @@ app.get("/", (req, res) => {
   res.sendFile(creatPath("index"));
 });
 
+let newName = 'Test';
+
 app.get("/contacts", (req, res) => {
   res.sendFile(creatPath("contacts"));
 });
