@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 
 let newName = 'Test';
 let newName2 = 'Test2';
+let newName3 = 'Test3';
 
 app.get("/contacts", (req, res) => {
   res.sendFile(creatPath("contacts"));
